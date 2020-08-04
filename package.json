@@ -1,0 +1,29 @@
+{
+  "name": "kcacademy.github.io",
+  "version": "1.0.0",
+  "description": "Official Website for KC Academy",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KCAcademy/kcacademy.github.io.git"
+  },
+  "keywords": [
+    "Website",
+    "KCAcademy"
+  ],
+  "author": "Kevin Nguyen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KCAcademy/kcacademy.github.io/issues"
+  },
+  "homepage": "https://github.com/KCAcademy/kcacademy.github.io#readme",
+  "dependencies": {
+    "@popperjs/core": "^2.4.4",
+    "bootstrap": "^4.5.1",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1"
+  }
+}

@@ -1,0 +1,76 @@
+h1 {
+  pdding-left: 10px;
+  padding-bottom: 50px;
+}
+
+h2 {
+  font-size: 4vw;
+}
+h5 {
+  padding-bottom: 10px;
+}
+
+.icon {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.img-wrapper {
+  position: relative;
+}
+
+.img-responsive{
+  width: 100%;
+  height: auto;
+  opacity: 0.7;
+}
+
+.img-overlay {
+  position: absolute;
+  top: 70%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.text-overlay{
+  position: absolute;
+  display: block;
+  top: 5%;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
+  background-color: white;
+  width: 50%;
+  height: 30%;
+  border-radius: 5px;
+  font-size: 1.88vw;
+}
+
+.btn {
+  width: 20%;
+  height: 50%;
+  background-color: #F33;
+  font-size: 1.8vw;
+  text-align: center;
+}
+
+.btn:hover{
+  background-color: grey;
+}
+
+.portrait {
+  width: 50%;
+  height: auto;
+}
+
+#short-reviews {
+  text-align: center;
+}
+
+#about-us {
+  position: static;
+}
