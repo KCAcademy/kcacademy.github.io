@@ -50,7 +50,8 @@ h5 {
   left: 0;
   margin: auto;
   text-align: center;
-  background-color: white;
+  background-color: rgb(39, 37, 37);
+  color: whitesmoke;
   width: 50%;
   height: 30%;
   border-radius: 5px;
@@ -60,7 +61,7 @@ h5 {
 .btn {
   width: 20%;
   height: 50%;
-  background-color: #F33;
+  background-color: #d5573b;
   font-size: 1.8vw;
   text-align: center;
 }
