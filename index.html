@@ -1,5 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
+  <!-- PHP Error Message -->
+
+  <?php
+
+  $errors = [];
+  $errorMessage = '';
+
+  if (!empty($_POST)) {
+    $fname = $_POST['fname'];
+    $lname = $_POST['lname'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
+
+    if (empty($fname)) {
+      $errors[] = 'First name is empty';
+    }
+
+    if (empty($lname)){
+      $errors[] = 'Last name is empty';
+    }
+
+    if (empty($email)) {
+      $errors[] = 'Email is empty';
+    }
+    else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      $errors[] = 'Email is invalid';
+    }
+
+    if (empty($message)){
+      $errors[] = 'Message is empty';
+    }
+
+    if (empty($message)) {
+      $toEmail = 'info@kevscodingacademy.com';
+      $emailSubject = 'New email from website form'; 
+      $headers = ['From' => $email, 'Reply-To' => $email, 'Content-type' => 'text/html'; charset=iso-8859-1'];
+      
+      $bodyParagraphs = ["Name: {$fname . $lname}", "Email: {$email}", "Message:", $message];
+      $body = join(PHP_EOL, $bodyParagraphs);
+
+      if (mail($toEmail, $emailSubject, $body, $headers)) {
+        header('Location: thank-you.html');
+      }
+      else {
+        $errorMessage = 'Oops, something went wrong. Please try again later.';
+      }
+    }
+    else {
+      $allErrors = join('<br/>', $errors);
+      $errorMessage = "<p style='color:red;'>{$allErrors}</p>";
+    }
+  }
+  
+  ?>
+
+  
 <html>
 
 <head>
@@ -9,6 +66,9 @@
   <title>Kev's Coding Academy</title>
   <script type="text/javascript"></script>
   <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <!-- Form Validation -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+  <script src="scripts/form.js"></script>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="style.css">
@@ -18,7 +78,7 @@
   <img id="logo" src='src/img/logo.png' alt="Kev's Coding Academy Logo"> <hr>
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#">Navigation</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -162,11 +222,12 @@
   <div id="contact">
       <p>Do you have any additional questions? Did you need to leave us additional information about your freelancing/assignment request? 
         Fill out the form and we'll get back to shortly!</p>
-      <form>
+        <?php echo((!empty($errorMessage)) ? $errorMessage : '') ?>
+      <form method="POST" action="form.php" id="contact-form">
         <div class="row">
           <div class="col">
             <label for="contact-email">Email address</label>
-            <input type="email" class="form-control" id="contact-email" aria-describedby="emailHelp" placeholder="Your Email">
+            <input name="email" type="email" class="form-control" id="contact-email" aria-describedby="emailHelp" placeholder="Your Email">
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
           </div>
         </div>
@@ -174,11 +235,11 @@
         <div class="row">
           <div class="col">         
              <label for="contact-firstName">First Name</label>
-            <input type="text" class="form-control" id="contact-firstName" placeholder="Your first name">
+            <input name="fname" type="text" class="form-control" id="contact-firstName" placeholder="Your first name">
           </div>
           <div class="col">
             <label for="contact-lastName">Last Name</label>
-            <input type="text" class="form-control" id="contact-lastName" placeholder="Your last name">
+            <input name="lname" type="text" class="form-control" id="contact-lastName" placeholder="Your last name">
           </div>
         </div>
         <br>
@@ -186,16 +247,12 @@
         <div class="row">
           <div class="col">
             <label for="contact-inquiry">Your questions</label>
-            <textarea type="text" class="form-control" id="contact-inquiry" placeholder="Questions"></textarea>
+            <textarea name="message" type="text" class="form-control" id="contact-inquiry" placeholder="Questions"></textarea>
           </div>
         </div>
         <br>
         
-        <div class="form-group form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Confirm</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" value="Send" class="btn btn-primary">Submit</button>
       </form>
   </div>
 
