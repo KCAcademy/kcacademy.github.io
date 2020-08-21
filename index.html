@@ -1,259 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <!-- PHP Error Message -->
+  <head>
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Kev's Coding Academy</title>
+    <script type="text/javascript"></script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <!-- Form Validation -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+    <script src="scripts/form.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
 
-  <?php
+  <body>
+    <img id="logo" src='src/img/logo.png' alt="Kev's Coding Academy Logo"> <hr>
 
-  $errors = [];
-  $errorMessage = '';
-
-  if (!empty($_POST)) {
-    $fname = $_POST['fname'];
-    $lname = $_POST['lname'];
-    $email = $_POST['email'];
-    $message = $_POST['message'];
-
-    if (empty($fname)) {
-      $errors[] = 'First name is empty';
-    }
-
-    if (empty($lname)){
-      $errors[] = 'Last name is empty';
-    }
-
-    if (empty($email)) {
-      $errors[] = 'Email is empty';
-    }
-    else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-      $errors[] = 'Email is invalid';
-    }
-
-    if (empty($message)){
-      $errors[] = 'Message is empty';
-    }
-
-    if (empty($message)) {
-      $toEmail = 'info@kevscodingacademy.com';
-      $emailSubject = 'New email from website form'; 
-      $headers = ['From' => $email, 'Reply-To' => $email, 'Content-type' => 'text/html'; charset=iso-8859-1'];
-      
-      $bodyParagraphs = ["Name: {$fname . $lname}", "Email: {$email}", "Message:", $message];
-      $body = join(PHP_EOL, $bodyParagraphs);
-
-      if (mail($toEmail, $emailSubject, $body, $headers)) {
-        header('Location: thank-you.html');
-      }
-      else {
-        $errorMessage = 'Oops, something went wrong. Please try again later.';
-      }
-    }
-    else {
-      $allErrors = join('<br/>', $errors);
-      $errorMessage = "<p style='color:red;'>{$allErrors}</p>";
-    }
-  }
-  
-  ?>
-
-  
-<html>
-
-<head>
-  <!-- Meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Kev's Coding Academy</title>
-  <script type="text/javascript"></script>
-  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-  <!-- Form Validation -->
-  <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
-  <script src="scripts/form.js"></script>
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-
-<body>
-  <img id="logo" src='src/img/logo.png' alt="Kev's Coding Academy Logo"> <hr>
-
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navigation</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="#about-section">About Us<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#services-section">Services & Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#appointment-section">Book an Appointment!</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#contact-section">Contact</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <hr>
-  <div class="container-fluid" id="short-reviews">
-    <h5> Here's what our students have to say about us! </h5>
-    <div class="row">
-        <div class="col-sm">
-          "Kev is an incredible teacher. He is extremely patient and thorough.
-          Better than many professors. I learned so much in an hour and that would've taken me days without this session."<br>
-          - Sumeyya T. <img class="icon" src="src/img/rating.png" alt="5 Star Rating">
-        </div>
-        <div class="col-sm">
-          "...[Kev and I] Our sessions have been very clear, concise, and informative. I really like the fact that Kevin is straight-out-of-college.
-          It gives him a better ability to connect with his younger pupils, and his teaching methods are better than that of most industry professionals because of it.
-          I’d certainly recommend Kev’s Coding Academy to anyone trying to get their feet wet!" <br>
-          - Mathew H. <img class="icon" src="src/img/rating.png" alt="5 Star Rating">
-        </div>
-        <div class="col-sm">
-          "Kevin is knowledgeable and extremely patient. I recommend Kev's Coding academy to students of all ages."<br>
-          - Ryon R. <img class="icon" src="src/img/rating.png" alt="5 Star Rating">
-        </div>
-    </div>
-  </div>
-
-  <div class="img-wrapper" id="banner">
-    <img src="src/img/booking-bg.jpg"  class="img-responsive" alt="Coding backdrop">
-    <div class="text-overlay">
-      <p> Do you need to improve your studies? <br>
-      Is your class material not clicking?  <br>
-      Book a lesson/assignment consultation with KC Academy! </p>
-    </div>
-    <div class="img-overlay" id="booking">
-      <!-- Change to jquery ScrollTo -->
-      <button class="btn" onClick="document.getElementById('appointment-section').scrollIntoView();"> Book a Lesson Now! </button>
-      <p style="color: white; font-size: 1.8vw;"> Or text (647) 679-0484 </p>
-    <div>
-  </div>
-
-  <br><br><br>
-
-  <div id="about-us">
-    <br>
-    <div class="container-fluid">
-      <h2 id="about-section"> About us </h2>
-        <div class="row">
-          <div class="col-sm" style="text-align: left; padding-left: 5%;">
-            <h4> My name is Kevin Nguyen. </h4>
-            <p> I'm a recent graduate of an Electrical Engineering degree, and I currently work as a Software Consultant. I have the credentials to help YOU build the skills that you need to excel as a future or current computer programmer.
-            <br>
-
-            Why choose me? <ul>
-            <li>I have more than a year of experience in programming education</li>
-            <li>I have 3+ years of technical experience</li>
-            <li>I developed years of consulting skills to help YOU understand complex topics in simple and attractive ways.</li>
-            <li>I have experience teaching all ages (6-16 years old) and have consulted various government clients throughout my career.</li>
-          </ul>
-
-            I currently teach: C++, C, Javascript and Web Design (CSS & HTML) - contact me if you need help with other languages!
-          </div>
-
-          <div class="col-sm">
-            <img class="portrait" src="src/img/kevin-n.jpg" alt="A picture of Kevin Nguyen">
-          </div>
-      </div>
-    </div>
-  </div>
-
-  <hr>
-  <div class="container-fluid" id="services">
-    <h2 id="services-section">What do we offer?</h2>
-    <div class="row">
-      <div class="col-sm">
-        <img class="service-icon" src="src/img/cap-burgundy.png" alt="A graduation cap">
-        <h4>Lessons for you or your kids!</h4>
-        <h5>Rates begin at $30/hr.</h5>
-        <h6>Please contact us for more details.</h6>
-        <p style="text-align: left;">
-        We pride ourselves on our thorough lessons - using a carefully designed methodology to help our students understand complex topics clearly and for a long time.
-        <br><br>We teach multiple languages: </p> 
-          <ul style="text-align: left;">
-            <li>Javascript</li>
-            <li>C++</li>
-            <li>C</li>
-            <li>And many others upon request, <a href="#">contact us!</a></li>
-          </ul>
-        </li>
-
-      </div>
-      <div class="col-sm">
-        <img class="service-icon" src="src/img/ribbon.png" alt="A prize ribbon">
-        <h4>Personalized Assignment Help!</h4>
-        <h5>Rates begin at $35/hr. Additional fee for short notice assignments.</h5>
-        <h6>Please contact us for more details.</h6>
-        <p>We help our students with their assignments, from weekly labs to final projects!</p>
-        <p>If you need help, send an email to <a href="info@kevscodingacademy.com">info@kevscodingacademy.com</a> with your assignment materials and any additional information.</p>
-      </div>
-      <div class="col-sm">
-        <img class="service-icon" src="src/img/wrench-hammer.png" alt="A wrench and screwdriver">
-        <h4>Dev Freelancing</h4>
-        <h5>Rates are dependent on the service. </h5>
-        <h6>Please contact us for details.</h6>
-        <p style="text-align: left;"> Available Services: </p>
-        <ul style="text-align: left;">
-          <li>Web Design</li>
-          <li>Game Design</li>
-          <li>Creating Educational Material</li>
-          <li>If you need something else, <a href="#">contact us!</a></li>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Navigation</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#about-section">About Us<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#services-section">Services & Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#appointment-section">Book an Appointment!</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact-section">Contact</a>
+          </li>
         </ul>
       </div>
+    </nav>
+    <hr>
+    <div class="container-fluid" id="short-reviews">
+      <h5> Here's what our students have to say about us! </h5>
+      <div class="row">
+          <div class="col-sm">
+            "Kev is an incredible teacher. He is extremely patient and thorough.
+            Better than many professors. I learned so much in an hour and that would've taken me days without this session."<br>
+            - Sumeyya T. <img class="icon" src="src/img/rating.png" alt="5 Star Rating">
+          </div>
+          <div class="col-sm">
+            "...[Kev and I] Our sessions have been very clear, concise, and informative. I really like the fact that Kevin is straight-out-of-college.
+            It gives him a better ability to connect with his younger pupils, and his teaching methods are better than that of most industry professionals because of it.
+            I’d certainly recommend Kev’s Coding Academy to anyone trying to get their feet wet!" <br>
+            - Mathew H. <img class="icon" src="src/img/rating.png" alt="5 Star Rating">
+          </div>
+          <div class="col-sm">
+            "Kevin is knowledgeable and extremely patient. I recommend Kev's Coding academy to students of all ages."<br>
+            - Ryon R. <img class="icon" src="src/img/rating.png" alt="5 Star Rating">
+          </div>
+      </div>
     </div>
-  </div>
 
-  <hr>
+    <div class="img-wrapper" id="banner">
+      <img src="src/img/booking-bg.jpg"  class="img-responsive" alt="Coding backdrop">
+      <div class="text-overlay">
+        <p> Do you need to improve your studies? <br>
+        Is your class material not clicking?  <br>
+        Book a lesson/assignment consultation with KC Academy! </p>
+      </div>
+      <div class="img-overlay" id="booking">
+        <!-- Change to jquery ScrollTo -->
+        <button class="btn" onClick="document.getElementById('appointment-section').scrollIntoView();"> Book a Lesson Now! </button>
+        <p style="color: white; font-size: 1.8vw;"> Or text (647) 679-0484 </p>
+      <div>
+    </div>
 
-  <h2 id="appointment-section">Make an appointment!</h1>
-  <iframe id="sagendaFrame" src="https://sagenda.net/Frontend/Calendar/5eff26fdd67ba56c1805b3a8" scrolling="no" height="1300" style="width:100%" frameborder="0" allowtransparency="true" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-top-navigation allow-scripts allow-forms"></iframe>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-  </body>
+    <br><br><br>
 
-  <h2 id="contact-section">Contact us!</h2>
-  <div id="contact">
-      <p>Do you have any additional questions? Did you need to leave us additional information about your freelancing/assignment request? 
-        Fill out the form and we'll get back to shortly!</p>
-        <?php echo((!empty($errorMessage)) ? $errorMessage : '') ?>
-      <form method="POST" action="form.php" id="contact-form">
-        <div class="row">
-          <div class="col">
-            <label for="contact-email">Email address</label>
-            <input name="email" type="email" class="form-control" id="contact-email" aria-describedby="emailHelp" placeholder="Your Email">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-          </div>
+    <div id="about-us">
+      <br>
+      <div class="container-fluid">
+        <h2 id="about-section"> About us </h2>
+          <div class="row">
+            <div class="col-sm" style="text-align: left; padding-left: 5%;">
+              <h4> My name is Kevin Nguyen. </h4>
+              <p> I'm a recent graduate of an Electrical Engineering degree, and I currently work as a Software Consultant. I have the credentials to help YOU build the skills that you need to excel as a future or current computer programmer.
+              <br>
+
+              Why choose me? <ul>
+              <li>I have more than a year of experience in programming education</li>
+              <li>I have 3+ years of technical experience</li>
+              <li>I developed years of consulting skills to help YOU understand complex topics in simple and attractive ways.</li>
+              <li>I have experience teaching all ages (6-16 years old) and have consulted various government clients throughout my career.</li>
+            </ul>
+
+              I currently teach: C++, C, Javascript and Web Design (CSS & HTML) - contact me if you need help with other languages!
+            </div>
+
+            <div class="col-sm">
+              <img class="portrait" src="src/img/kevin-n.jpg" alt="A picture of Kevin Nguyen">
+            </div>
         </div>
-        
-        <div class="row">
-          <div class="col">         
-             <label for="contact-firstName">First Name</label>
-            <input name="fname" type="text" class="form-control" id="contact-firstName" placeholder="Your first name">
-          </div>
-          <div class="col">
-            <label for="contact-lastName">Last Name</label>
-            <input name="lname" type="text" class="form-control" id="contact-lastName" placeholder="Your last name">
-          </div>
-        </div>
-        <br>
+      </div>
+    </div>
 
-        <div class="row">
-          <div class="col">
-            <label for="contact-inquiry">Your questions</label>
-            <textarea name="message" type="text" class="form-control" id="contact-inquiry" placeholder="Questions"></textarea>
-          </div>
+    <hr>
+    <div class="container-fluid" id="services">
+      <h2 id="services-section">What do we offer?</h2>
+      <div class="row">
+        <div class="col-sm">
+          <img class="service-icon" src="src/img/cap-burgundy.png" alt="A graduation cap">
+          <h4>Lessons for you or your kids!</h4>
+          <h5>Rates begin at $30/hr.</h5>
+          <h6>Please contact us for more details.</h6>
+          <p style="text-align: left;">
+          We pride ourselves on our thorough lessons - using a carefully designed methodology to help our students understand complex topics clearly and for a long time.
+          <br><br>We teach multiple languages: </p> 
+            <ul style="text-align: left;">
+              <li>Javascript</li>
+              <li>C++</li>
+              <li>C</li>
+              <li>And many others upon request, <a href="#">contact us!</a></li>
+            </ul>
+          </li>
+
         </div>
-        <br>
-        
-        <button type="submit" value="Send" class="btn btn-primary">Submit</button>
-      </form>
-  </div>
+        <div class="col-sm">
+          <img class="service-icon" src="src/img/ribbon.png" alt="A prize ribbon">
+          <h4>Personalized Assignment Help!</h4>
+          <h5>Rates begin at $35/hr. Additional fee for short notice assignments.</h5>
+          <h6>Please contact us for more details.</h6>
+          <p>We help our students with their assignments, from weekly labs to final projects!</p>
+          <p>If you need help, send an email to <a href="info@kevscodingacademy.com">info@kevscodingacademy.com</a> with your assignment materials and any additional information.</p>
+        </div>
+        <div class="col-sm">
+          <img class="service-icon" src="src/img/wrench-hammer.png" alt="A wrench and screwdriver">
+          <h4>Dev Freelancing</h4>
+          <h5>Rates are dependent on the service. </h5>
+          <h6>Please contact us for details.</h6>
+          <p style="text-align: left;"> Available Services: </p>
+          <ul style="text-align: left;">
+            <li>Web Design</li>
+            <li>Game Design</li>
+            <li>Creating Educational Material</li>
+            <li>If you need something else, <a href="#">contact us!</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <h2 id="appointment-section">Make an appointment!</h1>
+    <iframe id="sagendaFrame" src="https://sagenda.net/Frontend/Calendar/5eff26fdd67ba56c1805b3a8" scrolling="no" height="1300" style="width:100%" frameborder="0" allowtransparency="true" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-top-navigation allow-scripts allow-forms"></iframe>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </body>
+
+    <h2 id="contact-section">Contact us!</h2>
+    <div id="contact">
+        <p>Do you have any additional questions? Did you need to leave us additional information about your freelancing/assignment request? 
+          Fill out the form and we'll get back to shortly!</p>
+        <form method="POST" action="https://formspree.io/mdowvdyk" id="contact-form">
+          <div class="row">
+            <div class="col">
+              <label for="contact-email">Email address</label>
+              <input name="_replyto" type="email" class="form-control" id="contact-email" aria-describedby="emailHelp" placeholder="Your Email">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col">         
+              <label for="contact-firstName">First Name</label>
+              <input name="fname" type="text" class="form-control" id="contact-firstName" placeholder="Your first name">
+            </div>
+            <div class="col">
+              <label for="contact-lastName">Last Name</label>
+              <input name="lname" type="text" class="form-control" id="contact-lastName" placeholder="Your last name">
+            </div>
+          </div>
+          <br>
+
+          <div class="row">
+            <div class="col">
+              <label for="contact-inquiry">Your questions</label>
+              <textarea name="message" type="text" class="form-control" id="contact-inquiry" placeholder="Questions"></textarea>
+            </div>
+          </div>
+          <br>
+          
+          <button type="submit" value="Send" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
 
 </html>+
