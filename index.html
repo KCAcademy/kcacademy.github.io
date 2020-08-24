@@ -20,22 +20,22 @@
   </head>
 
   <body>
-    <div style="background-color: #18476f">
-      <img style="padding-top: 5px" id="logo" src='src/img/logo-white.png' alt="Kev's Coding Academy Logo"> <hr>
+    <div style="background-color: #f8f8f9; padding-bottom: 10px;">
+      <img style="padding-top: 5px" id="logo" src='src/img/logo-white.png' alt="Kev's Coding Academy Logo">
     </div>
-    
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #a09696;">
       <a class="navbar-brand" href="#">Navigation</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
+      <div class="collapse navbar-collapse" id="navbarNav" style="color: #f8f8f9;">
         <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#about-section">About Us<span class="sr-only">(current)</span></a>
+          <li class="nav-item">
+            <a class="nav-link" href="#about-us">About Us<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#services-section">Services & Pricing</a>
+            <a class="nav-link" href="#services">Services & Pricing</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#appointment-section">Book an Appointment!</a>
@@ -46,7 +46,7 @@
         </ul>
       </div>
     </nav>
-    <hr>
+
     <div class="container-fluid" id="short-reviews">
       <h5> Here's what our students have to say about us! </h5>
       <div class="row">
@@ -82,12 +82,11 @@
       <div>
     </div>
 
-    <br><br><br>
-
     <div id="about-us">
-      <h2 id="about-section"> About us </h2> <br>
       <div class="container-fluid">
-    
+        <div class="sub-header">
+          <h2 id="about-section"> About us </h2> 
+        </div>
           <div class="row">
             <div class="col-sm" style="text-align: left; padding-left: 5%;">
               <h4> My name is Kevin Nguyen. </h4>
@@ -111,9 +110,8 @@
       </div>
     </div>
 
-    <hr>
-    <h2 id="services-section">What do we offer?</h2> <br>
     <div class="container-fluid" id="services">
+      <div class="sub-header"><h2 id="services-section">What do we offer?</h2></div>
       <div class="row">
         <div class="col-sm">
           <img class="service-icon" src="src/img/cap-burgundy.png" alt="A graduation cap">
@@ -156,51 +154,52 @@
       </div>
     </div>
 
-    <hr>
+    <div class="sub-header"><h2 id="appointment-section">Make an appointment!</h2></div>
+    <div id="appointment">
+      <iframe id="sagendaFrame" src="https://sagenda.net/Frontend/Calendar/5eff26fdd67ba56c1805b3a8" scrolling="no" height="1300" style="width:90%;" frameborder="0" allowtransparency="true" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-top-navigation allow-scripts allow-forms"></iframe>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </div>
 
-    <h2 id="appointment-section">Make an appointment!</h1>
-    <iframe id="sagendaFrame" src="https://sagenda.net/Frontend/Calendar/5eff26fdd67ba56c1805b3a8" scrolling="no" height="1300" style="width:100%" frameborder="0" allowtransparency="true" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-top-navigation allow-scripts allow-forms"></iframe>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    </body>
-
-    <h2 id="contact-section">Contact us!</h2>
+    <div class="sub-header"><h2 id="contact-section">Contact us!</h2></div> 
     <div id="contact">
         <p>Do you have any additional questions? 
           <br>Did you need to leave us additional information about your freelancing/assignment request? 
-          <br>Fill out the form and we'll get back to shortly!</p>
-        <form method="POST" action="https://formspree.io/mdowvdyk" id="contact-form">
-          <div class="row">
-            <div class="col">
-              <label for="contact-email">Email address</label>
-              <input name="_replyto" type="email" class="form-control" id="contact-email" aria-describedby="emailHelp" placeholder="Your Email">
-              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          <br>Fill out the form and we'll get back to you shortly!</p>
+        <div>
+          <form method="POST" action="https://formspree.io/mdowvdyk" id="contact-form" style="width: 90%; margin-left: 5%">
+            <div class="row">
+              <div class="col">
+                <label for="contact-email">Email address</label>
+                <input name="_replyto" type="email" class="form-control" id="contact-email" aria-describedby="emailHelp" placeholder="Your Email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              </div>
             </div>
-          </div>
-          
-          <div class="row">
-            <div class="col">         
-              <label for="contact-firstName">First Name</label>
-              <input name="fname" type="text" class="form-control" id="contact-firstName" placeholder="Your first name">
+            
+            <div class="row">
+              <div class="col">         
+                <label for="contact-firstName">First Name</label>
+                <input name="fname" type="text" class="form-control" id="contact-firstName" placeholder="Your first name">
+              </div>
+              <div class="col">
+                <label for="contact-lastName">Last Name</label>
+                <input name="lname" type="text" class="form-control" id="contact-lastName" placeholder="Your last name">
+              </div>
             </div>
-            <div class="col">
-              <label for="contact-lastName">Last Name</label>
-              <input name="lname" type="text" class="form-control" id="contact-lastName" placeholder="Your last name">
-            </div>
-          </div>
-          <br>
+            <br>
 
-          <div class="row">
-            <div class="col">
-              <label for="contact-inquiry">Your questions</label>
-              <textarea name="message" type="text" class="form-control" id="contact-inquiry" placeholder="Questions"></textarea>
+            <div class="row">
+              <div class="col">
+                <label for="contact-inquiry">Your questions</label>
+                <textarea name="message" type="text" class="form-control" id="contact-inquiry" placeholder="Questions"></textarea>
+              </div>
             </div>
-          </div>
-          <br>
-          
-          <button type="submit" value="Send" class="btn btn-primary">Submit</button>
-        </form>
+            <br>
+            
+            <button type="submit" value="Send" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
     </div>
-
+  </body>
 </html>

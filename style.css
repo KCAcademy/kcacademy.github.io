@@ -2,6 +2,10 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  background-color: #f8f8f9;
+}
+
 h1 {
   padding-left: 10px;
   padding-bottom: 50px;
@@ -10,8 +14,28 @@ h1 {
 h2 {
   font-size: 4vw;
 }
+
 h5 {
   padding-bottom: 10px;
+}
+
+hr{
+  color:  #f5e2c8;
+}
+
+a{
+  color:#26baff;
+}
+
+a:hover{
+  color: #2684ff;;
+}
+
+.sub-header{
+  /*color: #f5e2c8;
+  margin: -15px;
+  background-color: #18476f;*/
+  padding: 10px;
 }
 
 .icon {
@@ -84,11 +108,24 @@ h5 {
 }
 
 #short-reviews {
+  padding-top: 20px;
+  background-color: inherit;
   text-align: center;
 }
 
 #about-us {
   position: static;
+  background-color: #3C3739;
+  color: #f8f8f9;
+  padding-bottom: 40px;
+  padding-top: 20px;
+}
+
+#services {
+  background-color: #685f63;
+  color: #f8f8f9;
+  padding-bottom: 20px;
+  padding-top: 20px;
 }
 
 #logo{
@@ -96,4 +133,20 @@ h5 {
   margin-left: auto;
   margin-right: auto;
   width: 35%;
+}
+
+#contact{
+  padding-bottom: 20px;
+  padding-top: 40px;
+  background-color: inherit;
+}
+
+#appointment{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+div.form{
+  display: block;
+  text-align: center;  
 }
