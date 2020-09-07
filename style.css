@@ -1,35 +1,7 @@
 @media only screen and (max-width: 768px) {
-  .img-responsive{
-    height: 500px;
-    width: auto;
-  }
-
-  .img-overlay {
-    position: absolute;
-    top: 70%;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    text-align: center;
-
-  }
-
   .text-overlay{
-    position: absolute;
-    display: block;
-    top: 5%;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    margin: auto;
-    text-align: center;
-    background-color: rgb(39, 37, 37);
-    color: whitesmoke;
-    width: 50%;
+    font-size: 0.9em;
     height: 35%;
-    border-radius: 5px;
-    font-size: 18px;
-    overflow-wrap: break-word;
   }
 }
 
