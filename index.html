@@ -8,136 +8,176 @@
     <meta name="description" content="Kev's Coding Academy Official Website">
     <meta name="keywords" content="C++, C, University, HTML, CSS, JavaScript, Tutor, Programming Tutor, Assignment Help, Computer Science">
     <meta name="author" content="Kevin Nguyen">
+
     <title>Kev's Coding Academy</title>
-    <script src="https://code.jquery.com/jquery-1.11.0.min.js" async></script>
-    <!-- Form Validation -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js" async></script>
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/b611778752.js" crossorigin="anonymous"></script>
+
+    <!-- Other CSS -->
+    <link rel="stylesheet" type="text/css" href="src/css/style.css">
+    <link rel="stylesheet" href="src/css/flickity.css" media="screen"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Raleway&display=swap" rel="stylesheet"> 
+
+    <!-- CC Licenses -->
+    <!-- FontAwesome (Icons used in Services): https://fontawesome.com/license/free -->
   </head>
 
   <body>
-    <div style="background-color: #f8f8f9; padding-bottom: 10px;">
-      <img style="padding-top: 5px" id="logo" src='src/img/logo-white.png' alt="Kev's Coding Academy Logo">
-    </div>
 
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #a09696;">
-      <a class="navbar-brand" href="#">Navigation</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav" style="color: #f8f8f9;">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="#about-me">About Me<span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#services">Services & Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#appointment-section">Book an Appointment!</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contact-section">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <ul class="navbar">
+      <div class="navbar-item" id="logo"><img src="src/img/logo-navbar.png"></div>
+      <div class="navbar-item"> <a href="#about-me">About Me</a> </div>
+      <div class="navbar-item"> <a href="#services">Services</a> </div>
+      <div class="navbar-item"> <a href="#appointment">Book an Appointment</a></div>
+      <div class="navbar-item"> <a href="#contact-section">Contact</a> </div>
+    </ul>
 
-    <div class="container-fluid" id="short-reviews">
-      <h5> Here's what my students have to say about Kev's Coding Academy! </h5>
-      <div class="row">
-          <div class="col-sm">
-            "Kev is an incredible teacher. He is extremely patient and thorough.
-            Better than many professors. I learned so much in an hour and that would've taken me days without this session."<br>
-            - Sumeyya T. <img class="icon" src="src/img/rating.png" alt="5 Star Rating">
-          </div>
-          <div class="col-sm">
-            "...[Kev and I] Our sessions have been very clear, concise, and informative. I really like the fact that Kevin is straight-out-of-college.
-            It gives him a better ability to connect with his younger pupils, and his teaching methods are better than that of most industry professionals because of it.
-            I’d certainly recommend Kev’s Coding Academy to anyone trying to get their feet wet!" <br>
-            - Mathew H. <img class="icon" src="src/img/rating.png" alt="5 Star Rating">
-          </div>
-          <div class="col-sm">
-            "Kevin is knowledgeable and extremely patient. I recommend Kev's Coding academy to students of all ages."<br>
-            - Ryon R. <img class="icon" src="src/img/rating.png" alt="5 Star Rating">
-          </div>
-      </div>
-    </div>
-
-    <div class="img-wrapper" id="banner">
-      <img src="src/img/code-banner.png" class="img-responsive" alt="Coding backdrop">
-      <div class="text-overlay">
-        <p> Struggling with your classwork? <br> Want to improve your coding skills? <br>
-        Book a lesson/assignment consultation with KC Academy! </p>
-      </div>
-      <div class="img-overlay" id="booking">
-        <!-- Change to jquery ScrollTo -->
+    <div id="video-header">
+      <video playsinline autoplay muted loop poster="src/img/northern-lights.jpg" id="bgvid">
+        <source src="src/vid/laptop-code.mp4" type="video/mp4">
+      </video>
+      <div class="overlay">
+        <h2> Need Help? </h2>  
+        <p> Struggling with your classwork? </p>
+        <p> Want to improve your coding skills? </p>
+        <p> Book a lesson/assignment consultation with KC Academy! </p>
         <button class="btn"  style="text-align: center;" onClick="document.getElementById('appointment-section').scrollIntoView();"> Book a Lesson Now! </button>
-        <p style="font-size: 1.88vw; color: white; background-color: rgb(39, 37, 37); opacity: 70%; text-align: center"> Or text <a href="tel:6476790484" style="color:#b8fffd">(647) 679-0484</a> </p>
-      <div>
+        <p style="padding-top: 10px"> Or contact <a style="color: #668EFF" href="tel:6476790484">(647) 679-0484</a> / <a href="mailto: info@kevscodingacademy.com"> info@kevscodingacademy.com </a></a></p>
+      </div>
+    </div>
+
+    <h3 style="text-align: center;"> Here's what my students have to say about Kev's Coding Academy! </h3>
+
+    <div class="main-gallery">
+      
+      <div class="carousel-cell">
+        <p>
+          "Kev is an incredible teacher. He is extremely patient and thorough.
+              Better than many professors. I learned so much in an hour and that would've taken me days without this session."<br>
+              - Sumeyya T. 
+        </p>
+        <img class="icon" src="src/img/rating.png" alt="5 Star Rating">
+      </div>
+
+      <div class="carousel-cell">
+        <p>
+          "...Our sessions have been very clear, concise, and informative. I really like the fact that Kevin is straight-out-of-college.
+          It gives him a better ability to connect with his younger pupils, and his teaching methods are better than that of most industry professionals because of it." <br>
+          - Mathew H. 
+        </p>
+        <img class="icon" src="src/img/rating.png" alt="5 Star Rating">
+      </div>
+
+      <div class="carousel-cell">
+        <p>
+        "Kevin is knowledgeable and extremely patient. I recommend Kev's Coding academy to students of all ages."<br>
+        - Ryon R. 
+        </p>
+        <img class="icon" src="src/img/rating.png" alt="5 Star Rating">
+      </div>
+
+      <div class="carousel-cell">
+        <p>
+        "Kevin’s really great at taking time to explain things to you until you get it. 
+        He’s really knowledgeable and has a great teaching style. 
+        If you’re looking for help with understanding coding I would highly recommend him to anyone"
+        <br>
+        - Ramsay B.
+        </p>
+        <img class="icon" src="src/img/rating.png" alt="5 Star Rating">
+      </div>
+
+      <div class="carousel-cell">
+        <p>
+        "I’m a grad student taking an intro python course in my program. 
+        The prof was going way too fast and I found it frustrating to sort through the mountains of resources online. 
+        I reached out Kev and we connected for our first session the same week. 
+        He is patient, knowledgeable, engaging, and tailors his approach to your skill level. 
+        An all-around excellent teacher. Thank you Kev!"<br>
+        - Emma R. 
+        </p>
+        <img class="icon" src="src/img/rating.png" alt="5 Star Rating">
+      </div>
+
     </div>
 
     <div id="about-me">
-      <div class="container-fluid">
-        <div class="sub-header">
-          <h2 id="about-section"> About Me </h2> 
-        </div>
-          <div class="row">
-            <div class="col-sm" style="text-align: left; padding-left: 5%;">
-              <h4> My name is Kevin Nguyen. </h4>
-              <p> I'm a recent graduate of Electrical and Computer Engineering from Western University, and I have recently worked as a Software Consultant. I have the credentials to help <b>YOU</b> build the skills that you need to excel as a future or current computer programmer.
-              <br>
+      <h2> About Me </h2> 
+      <div class="contain">
+              <div class="block">
+                <h4> My name is Kevin Nguyen. </h4>
+                <p> I'm a recent graduate of Electrical and Computer Engineering from Western University, and I have recently worked as a Software Consultant. I have the credentials to help <b>YOU</b> build the skills that you need to excel as a future or current computer programmer.
+                <br>
+                <h4>Why choose me? </h4>
+                <ul>
+                  <li>I have more than two years of experience in programming education</li>
+                  <li>I have 3+ years of technical experience</li>
+                  <li>I have developed years of consulting skills to help <b>YOU</b> understand complex topics in simple and attractive ways.</li>
+                  <li>I have experience teaching all ages (6-16 years old) and have consulted various government clients throughout my career.</li>
+                </ul>
+                <p style="font-size: 1.8vw;">I currently teach: C++, C, Javascript and Web Design (CSS & HTML) - contact me if you need help with other languages! </p>
+              </div>
 
-              Why choose me? <ul>
-              <li>I have more than two years of experience in programming education</li>
-              <li>I have 3+ years of technical experience</li>
-              <li>I have developed years of consulting skills to help <b>YOU</b> understand complex topics in simple and attractive ways.</li>
-              <li>I have experience teaching all ages (6-16 years old) and have consulted various government clients throughout my career.</li>
-            </ul>
-
-              I currently teach: C++, C, Javascript and Web Design (CSS & HTML) - contact me if you need help with other languages!
-            </div>
-
-            <div class="col-sm">
-              <img class="portrait" src="src/img/kevin-n.jpg" alt="A picture of Kevin Nguyen">
-            </div>
-        </div>
+              <div class="block">
+                <img style="float: right;" src="src/img/kevin-n.jpg" alt="A picture of Kevin Nguyen">
+              </div>
       </div>
     </div>
 
-    <div class="container-fluid" id="services">
-      <div class="sub-header"><h2 id="services-section">What does KC Academy offer?</h2></div>
-      <div class="row">
-        <div class="col-sm">
-          <img class="service-icon" src="src/img/cap-burgundy.png" alt="A graduation cap">
+    <div id="services">
+      <h2>What does KC Academy offer?</h2>
+
+      <div class="contain">
+        <div class="block blockicon" style="order: 1;">
+          <img class="service-icon" src="src/img/graduate.png" alt="A graduate">
+        </div>
+
+        <div class="block" style="order: 2; flex-grow: 3">
           <h4>Lessons for you or your kids!</h4>
           <h5>Rates begin at $45/hr; discounts available for group lessons.</h5>
           <h6>Please <a href="#contact-section">contact me</a> for more details.</h6>
-          <p style="text-align: left;">
-          I pride myself by providing thorough lessons - using a carefully designed methodology to help my students understand complex topics clearly and for a long time.
-          <br><br>I teach multiple languages: </p> 
-            <ul style="text-align: left;">
-              <li>Javascript</li>
-              <li>C++</li>
-              <li>C</li>
-              <li>And many others upon request, <a href="#contact-section">contact me!</a></li>
-            </ul>
-          </li>
 
+          <p>
+            I pride myself by providing thorough lessons - using a carefully designed methodology to help my students understand complex topics clearly and for a long time.
+            <br><br>
+            I teach multiple languages: 
+          </p> 
+
+          <ul>
+            <li>Javascript</li>
+            <li>C++</li>
+            <li>C</li>
+            <li>And many others upon request, <a href="#contact-section">contact me!</a></li>
+          </ul>
         </div>
-        <div class="col-sm">
-          <img class="service-icon" src="src/img/ribbon.png" alt="A prize ribbon">
+      </div>
+
+      <div class="contain">
+        <div class="block blockicon" style="order: 1;">
+          <img class="service-icon" src="src/img/award.png" alt="A prize ribbon">
+        </div>
+
+        <div class="block" style="order: 2; flex-grow: 3;">
           <h4>Personalized Assignment Help!</h4>
           <h5>Rates begin at $50/hr; additional fee for short notice assignments.</h5>
           <h6>Please <a href="#contact-section">contact me</a> for more details.</h6>
           <p>I help my students with their assignments, from weekly labs to final projects!</p>
           <p>If you need help, send an email to <a href="mailto: info@kevscodingacademy.com">info@kevscodingacademy.com</a> with your assignment materials and any additional information.</p>
         </div>
-        <div class="col-sm">
-          <img class="service-icon" src="src/img/wrench-hammer.png" alt="A wrench and screwdriver">
-          <br><h4>Dev Freelancing</h4>
+      </div>
+
+      <div class="contain">
+        <div class="block blockicon"  style="order: 1; ">
+          <img class="service-icon" src="src/img/briefcase.png" alt="A briefcase">
+        </div>       
+
+        <div class="block" style="order: 2; flex-grow: 3;">
+          <h4>Dev Freelancing</h4>
           <h5>Rates are dependent on the service. </h5>
           <h6>Please <a href="#contact-section">contact me</a> for details.</h6>
           <p style="text-align: left;"> Available Services: </p>
@@ -148,20 +188,25 @@
             <li>If you need something else, <a href="#contact-section">contact me!</a></li>
           </ul>
         </div>
+
+      </div>
+
+    </div>
+
+    <div id="appointment">
+      <h2>Make an appointment!</h2>
+      <div>
+        <iframe id="sagendaFrame" src="https://sagenda.net/Frontend/Calendar/5eff26fdd67ba56c1805b3a8" scrolling="no" height="1300" style="width:90%;" frameborder="0" allowtransparency="true" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-top-navigation allow-scripts allow-forms"></iframe>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
       </div>
     </div>
 
-    <div class="sub-header"><h2 id="appointment-section">Make an appointment!</h2></div>
-    <div id="appointment">
-      <iframe id="sagendaFrame" src="https://sagenda.net/Frontend/Calendar/5eff26fdd67ba56c1805b3a8" scrolling="no" height="1300" style="width:90%;" frameborder="0" allowtransparency="true" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-top-navigation allow-scripts allow-forms"></iframe>
-      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    </div>
-
-    <div class="sub-header"><h2 id="contact-section">Contact me!</h2></div> 
     <div id="contact">
-        <p>Do you have any additional questions? 
+      <h2>Contact me!</h2>
+      <div>
+        <p style="padding-left: 5%;">Do you have any additional questions? 
           <br>Did you need to leave additional information about your freelancing/assignment request? 
           <br>Fill out the form and I'll get back to you shortly!</p>
         <div>
@@ -198,5 +243,14 @@
           </form>
         </div>
     </div>
+
+    <!-- Javascript -->
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js" async></script>
+    <!-- Form Validation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js" async></script>
+    <!-- Flickity -->
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="src/js/enable-flickity.js"></script>
+    <!-- End scripts -->
   </body>
 </html>

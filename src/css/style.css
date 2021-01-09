@@ -1,0 +1,334 @@
+@media only screen and (max-width: 768px) {
+  .text-overlay{
+    font-size: 0.9em;
+    height: 35%;
+  }
+}
+
+/* navbar */
+
+.navbar{
+  position: sticky;
+  display: flex;
+  top: 0;
+  background-color: #668EFF;
+  z-index: 2;
+  text-align: center;
+  padding: 0 1%;
+  border-radius: 1px;
+}
+
+.navbar-item {
+  justify-self: end;
+  width: 15%;
+  height: 80px;
+
+}
+
+.navbar-item img {
+  height: 60px;
+  float: left;
+  justify-self: start;
+}
+
+.navbar-item a  {
+  display: block;
+  color: #FFFFFF;
+  text-decoration: none;
+  height: inherit;
+  align-items: center;
+}
+
+.navbar-item > a:hover {
+  background-color: #001B48;
+  color: #EBEBEB;
+}
+
+#logo {
+    text-align: center;
+    font-family: 'Sansita Swashed', cursive;
+    font-size: 2em;
+    justify-self: start;
+    color: whitesmoke;
+    padding: 1% 0;
+    flex-grow: 2;
+    margin-right: auto;
+    float: left;
+}
+
+/* General Style */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #EBEBEB;
+  font-family: 'Raleway', sans-serif;
+}
+
+p {
+  font-size: 1.25vw;
+}
+
+h1 {
+  padding-left: 1%;
+  font-family: 'Abril Fatface', cursive;
+}
+
+h2 {
+  font-size: 4vw;
+  font-family: 'Abril Fatface', cursive;
+  padding-left: 1%;
+}
+
+h3 {
+  padding: 3% 0;
+  font-size: 2.5vw;
+  font-family: 'Abril Fatface', cursive;
+}
+
+h4 {
+  padding: 0.5% 0;
+  font-size: 2vw;
+}
+
+h5 {
+  padding: 0.5% 0;
+  font-size: 1.75vw;
+}
+
+h6 {
+  font-size: 1.5vw;
+}
+
+hr{
+  color:  #f5e2c8;
+}
+
+a{
+  color: #59C3C3;
+}
+
+a:hover{
+  color: #2684ff;;
+}
+
+iframe{
+  display: block;
+  margin: 0 auto;
+}
+
+/* Flexboxes */
+
+.contain {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  padding: 0 1% 1%;
+}
+
+.contain p {
+  font-size: 1.75vw;
+}
+
+.contain ul {
+  font-size: 1.6vw;
+}
+
+.contain li {
+  font-size: 1.5vw;
+}
+
+.contain h4 {
+  font-size: 2.5vw;
+}
+
+.contain h5 {
+  font-size: 2vw;
+}
+
+.block {
+  width: 100%;
+  padding: 1% 0;
+}
+
+.blockicon {
+  padding: 1% 0;
+  flex-grow: 1; 
+  width: 30%;
+}
+
+.block img {
+  width: 80%;
+  border-radius: 4px;
+}
+
+.icon {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.service-icon{
+  float: left;
+  padding-left: 2%;
+  padding-right: 2%;
+  fill: #EBEBEB;
+}
+
+/* Video Overlay */
+
+.btn {
+  width: 20%;
+  height: 50%;
+  background-color: #001B48;
+  font-size: 1.8vw;
+  text-align: center;
+  color: #EBEBEB;
+}
+
+.btn:hover{
+  background-color: #CAD2C5;
+  color: #001B48;
+}
+
+.overlay {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  color: white;
+  top: 25%;
+  left: 0;
+  z-index: 1;
+}
+
+.overlay h2 {
+  font-size: 4vw;
+  font-family: 'Abril Fatface', cursive;
+  margin-bottom: 1%;
+}
+
+.overlay p {
+  font-size: 2vw;
+  font-family: 'Raleway', sans-serif;
+}
+
+/* Sections */
+
+#video-header {
+  position: relative;
+  margin-top: -7.5%;
+}
+
+#video-header video{
+  width: 100%;
+  height: 80%;
+  position: relative;
+  z-index: 0;
+}
+
+#short-reviews {
+  padding-top: 20px;
+  background-color: inherit;
+  text-align: center;
+}
+
+#about-me {
+  padding-top: 2%; 
+  background-color: #001B48; 
+  color: #EBEBEB;
+}
+
+#services {
+  padding-top: 2%; 
+  background-color:#59C3C3;
+  color: #EBEBEB;
+}
+
+#services a {
+  color: #001B48;
+}
+
+#appointment{
+  padding: 1% 0;
+}
+
+#appointment > div{
+  padding-top: 2%;
+}
+
+#contact{
+  padding-top: 2%;
+  background-color: inherit;
+}
+
+div.form{
+  display: block;
+  text-align: center;  
+}
+
+/* Flickity CSS */
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.main-gallery {
+  width: 95%;
+  margin: 1% auto 0%;
+  padding-bottom: 5%;
+}
+
+.carousel-cell img{
+  display: block;
+  padding: -10% 0 0;
+  max-width: 100%;
+  max-height: 100%;
+  opacity: 70%;
+  -webkit-transform: scale(0.85);
+          transform: scale(0.85);
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
+  -webkit-transition: opacity 0.3s, -webkit-transform 0.3s, transform 0.3s, -webkit-filter 0.3s, filter 0.3s;
+          transition: opacity 0.3s, transform 0.3s, filter 0.3s;
+}
+
+.carousel-cell {
+  width: 600px;
+  height: 500px;
+  padding: 0 10%;
+  color: transparent;
+  text-shadow: 0 0 5px rgba(0,0,0,0.5);
+  text-align: center;
+  font-size: 1.2vw;
+}
+
+.carousel-cell.is-selected img {
+  opacity: 1;
+  margin: 0 auto;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-filter: none;
+          filter: none;
+}
+
+.carousel-cell.is-selected {
+  color: #000000;
+  text-shadow: 0 0 5px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+@media screen and ( min-width: 768px ) {
+  .carousel-cell {
+    height: 400px;
+  }
+}
+
+@media screen and ( min-width: 960px ) {
+  .carousel-cell {
+    width: 60%;
+  }
+}
+/* End Flickity */
