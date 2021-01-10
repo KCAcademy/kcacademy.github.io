@@ -18,19 +18,6 @@
   border-radius: 1px;
 }
 
-.navbar-item {
-  justify-self: end;
-  width: 15%;
-  height: 80px;
-
-}
-
-.navbar-item img {
-  height: 60px;
-  float: left;
-  justify-self: start;
-}
-
 .navbar-item a  {
   display: block;
   color: #FFFFFF;
@@ -44,16 +31,56 @@
   color: #EBEBEB;
 }
 
-#logo {
+
+@media only screen and (min-width: 767px){
+
+  #logo {
     text-align: center;
     font-family: 'Sansita Swashed', cursive;
-    font-size: 2em;
     justify-self: start;
     color: whitesmoke;
     padding: 1% 0;
     flex-grow: 2;
     margin-right: auto;
     float: left;
+  }
+
+  .navbar-item {
+    justify-self: end;
+    width: 15%;
+    height: 80px;
+  }
+  
+  .navbar-item img {
+    height: 60px;
+    float: left;
+    justify-self: start;
+  }
+}
+
+@media only screen and (max-width: 767px){
+  #logo {
+    text-align: center;
+    font-family: 'Sansita Swashed', cursive;
+    justify-self: start;
+    color: whitesmoke;
+    padding: 1% 0;
+    flex-grow: 1;
+    margin-right: auto;
+    float: left;
+  }
+
+  .navbar-item {
+    justify-self: end;
+    width: 20%;
+    height: 60px;
+  }
+
+  .navbar-item img {
+    width: 0px;
+    float: left;
+    justify-self: start;
+  }
 }
 
 /* General Style */
@@ -68,7 +95,7 @@ body {
 }
 
 p {
-  font-size: 1.25vw;
+  font-size: 1em;
 }
 
 h1 {
@@ -77,29 +104,24 @@ h1 {
 }
 
 h2 {
-  font-size: 4vw;
   font-family: 'Abril Fatface', cursive;
   padding-left: 1%;
 }
 
 h3 {
   padding: 3% 0;
-  font-size: 2.5vw;
   font-family: 'Abril Fatface', cursive;
 }
 
 h4 {
   padding: 0.5% 0;
-  font-size: 2vw;
 }
 
 h5 {
   padding: 0.5% 0;
-  font-size: 1.75vw;
 }
 
 h6 {
-  font-size: 1.5vw;
 }
 
 hr{
@@ -130,24 +152,48 @@ iframe{
   padding: 0 1% 1%;
 }
 
-.contain p {
-  font-size: 1.75vw;
+@media only screen and (max-width: 767px){
+  .contain {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0 1% 3%;
+  }
+
+  .block img {
+    width: 60%;
+    border-radius: 4px;
+    display: block;
+    margin: 0 auto;
+    padding-bottom: 1%;
+  }
+  
 }
 
-.contain ul {
-  font-size: 1.6vw;
+@media only screen and (min-width: 768px){
+  .block img {
+    float: right;
+    width: 80%;
+    border-radius: 4px;
+  }
+}
+
+.contain p {
+  font-size: 1em;
 }
 
 .contain li {
-  font-size: 1.5vw;
+  font-size: 1em;
 }
 
 .contain h4 {
-  font-size: 2.5vw;
+  font-size: 1.5em;
 }
 
 .contain h5 {
-  font-size: 2vw;
+  font-size: 1.25em;
 }
 
 .block {
@@ -161,18 +207,12 @@ iframe{
   width: 30%;
 }
 
-.block img {
-  width: 80%;
-  border-radius: 4px;
-}
-
 .icon {
   max-width: 100px;
   max-height: 100px;
 }
 
 .service-icon{
-  float: left;
   padding-left: 2%;
   padding-right: 2%;
   fill: #EBEBEB;
@@ -194,28 +234,74 @@ iframe{
   color: #001B48;
 }
 
-.overlay {
-  position: absolute;
-  text-align: center;
-  width: 100%;
-  color: white;
-  top: 25%;
-  left: 0;
-  z-index: 1;
+@media only screen and (max-width: 767px){ 
+  .overlay {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    color: white;
+    top: 10%;
+    left: 0;
+    z-index: 1;
+  }
+
+  .overlay h2 {
+    font-size: 1.8em;
+    font-family: 'Abril Fatface', cursive;
+    margin-bottom: 1%;
+  }
+  
+  .overlay p {
+    font-size: 0.8em;
+    margin-bottom: 1%;
+    font-family: 'Raleway', sans-serif;
+  }
+
+  .overlay button {
+    font-size: 1em;
+    width: 60%;
+  }
 }
 
-.overlay h2 {
-  font-size: 4vw;
-  font-family: 'Abril Fatface', cursive;
-  margin-bottom: 1%;
-}
+@media only screen and (min-width: 767px){ 
 
-.overlay p {
-  font-size: 2vw;
-  font-family: 'Raleway', sans-serif;
+  .overlay {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    color: white;
+    top: 25%;
+    left: 0;
+    z-index: 1;
+  }
+
+  .overlay h2 {
+    font-size: 2em;
+    font-family: 'Abril Fatface', cursive;
+    margin-bottom: 1%;
+  }
+
+  .overlay p {
+    font-size: 1em;
+    margin-bottom: 1%;
+    font-family: 'Raleway', sans-serif;
+  }
 }
 
 /* Sections */
+@media only screen and (max-width: 767px){ 
+  #video-header {
+    position: relative;
+    margin-top: 0;
+  }
+  
+  #video-header video{
+    width: 70%;
+    height: 70%;
+    position: relative;
+    z-index: 0;
+  }
+}
 
 #video-header {
   position: relative;
@@ -276,9 +362,8 @@ div.form{
 }
 
 .main-gallery {
-  width: 95%;
+  width: 90%;
   margin: 1% auto 0%;
-  padding-bottom: 5%;
 }
 
 .carousel-cell img{
@@ -296,13 +381,13 @@ div.form{
 }
 
 .carousel-cell {
-  width: 600px;
+  width: 75%;
   height: 500px;
-  padding: 0 10%;
+  padding: 0 3%;
   color: transparent;
   text-shadow: 0 0 5px rgba(0,0,0,0.5);
   text-align: center;
-  font-size: 1.2vw;
+  font-size: 1.2em;
 }
 
 .carousel-cell.is-selected img {
@@ -320,9 +405,14 @@ div.form{
   text-align: center;
 }
 
-@media screen and ( min-width: 768px ) {
+@media screen and ( max-width: 767px ) {
   .carousel-cell {
     height: 400px;
+    width: 90%;
+  }
+
+  .carousel-cell p {
+    font-size: 0.8em;
   }
 }
 
