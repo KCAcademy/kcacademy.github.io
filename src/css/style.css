@@ -172,28 +172,76 @@ iframe{
   
 }
 
-@media only screen and (min-width: 768px){
-  .block img {
+@media only screen and (min-width: 768px) and (max-width: 1280px){
+  #me {
     float: right;
+  }
+  
+  .block img {
     width: 80%;
     border-radius: 4px;
   }
+
+  .service-icon{
+    float: left;
+    padding-left: 2%;
+    padding-right: 2%;
+    fill: #EBEBEB;
+  }
+  
 }
 
-.contain p {
-  font-size: 1em;
+@media only screen and (min-width: 1280px){
+  #me {
+    float: right;
+  }
+
+  .service-icon{
+    float: left;
+    padding-left: 2%;
+    padding-right: 2%;
+    fill: #EBEBEB;
+  }
+  
+  .block img {
+
+    width: 60%;
+    border-radius: 4px;
+  }
+
+  .contain p {
+    font-size: 1.25em;
+  }
+
+  .contain li {
+    font-size: 1.25em;
+  }
+
+  .contain h4 {
+    font-size: 2em;
+  }
+
+  .contain h5 {
+    font-size: 1.75em;
+  }
 }
 
-.contain li {
-  font-size: 1em;
-}
+@media only screen and (max-width: 1280px){
+  .contain p {
+    font-size: 1em;
+  }
 
-.contain h4 {
-  font-size: 1.5em;
-}
+  .contain li {
+    font-size: 1em;
+  }
 
-.contain h5 {
-  font-size: 1.25em;
+  .contain h4 {
+    font-size: 1.5em;
+  }
+
+  .contain h5 {
+    font-size: 1.25em;
+  }
 }
 
 .block {
@@ -211,13 +259,6 @@ iframe{
   max-width: 100px;
   max-height: 100px;
 }
-
-.service-icon{
-  padding-left: 2%;
-  padding-right: 2%;
-  fill: #EBEBEB;
-}
-
 /* Video Overlay */
 
 .btn {
@@ -232,6 +273,30 @@ iframe{
 .btn:hover{
   background-color: #CAD2C5;
   color: #001B48;
+}
+
+@media only screen and (min-width: 1280px){
+  .overlay {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    color: white;
+    top: 40%;
+    left: 0;
+    z-index: 1;
+  }
+
+  .overlay h2 {
+    font-size: 3em;
+    font-family: 'Abril Fatface', cursive;
+    margin-bottom: 1%;
+  }
+
+  .overlay p {
+    font-size: 1.5em;
+    margin-bottom: 1%;
+    font-family: 'Raleway', sans-serif;
+  }
 }
 
 @media only screen and (max-width: 767px){ 
@@ -263,14 +328,14 @@ iframe{
   }
 }
 
-@media only screen and (min-width: 767px){ 
+@media only screen and (min-width: 767px) and (max-width: 1280px) { 
 
   .overlay {
     position: absolute;
     text-align: center;
     width: 100%;
     color: white;
-    top: 25%;
+    top: 30%;
     left: 0;
     z-index: 1;
   }
