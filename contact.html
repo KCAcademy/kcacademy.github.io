@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Kev's Coding Academy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="fade-in">
+    <header>
+        <nav>
+            <div class="logo">Kev's Coding Academy</div>
+            <ul>
+                <li><a href="index.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Get In Touch! 👋</h1>
+            <p>Have questions or want to sign up? We'd love to hear from you!</p>
+        </section>
+
+        <section class="content contact-section">
+            <div class="contact-info">
+                <h2>Email Us</h2>
+                <p>Send us a message at: <a href="mailto:info@kevscodingacademy.com"
+                        class="email-link">info@kevscodingacademy.com</a></p>
+                <div style="margin-top: 2rem;">
+                    <h3>Follow our journey!</h3>
+                    <p>Facebook: <a href="https://www.facebook.com/kevscodingacademy" class="facebook-link">Kev's Coding
+                            Academy</a></p>
+                </div>
+            </div>
+
+            <div class="contact-card">
+                <h3>Send a Message</h3> </br>
+                <form action="https://formspree.io/f/mdowvdyk" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="_replyto" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Tell us about your coding goals!"
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Kev's Coding Academy</p>
+    </footer>
+</body>
+
+</html>
